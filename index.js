@@ -12,7 +12,7 @@ module.exports = function (file, opts) {
 		return Promise.reject(new TypeError('Expected a file.'));
 	}
 
-	opts = objectAssign({platform: '', dest: __dirname}, opts);
+	opts = objectAssign({platform: '', dest: process.cwd()}, opts);
 
 	if (opts.platform === '') {
 		return Promise.reject(new Error('Please provide a platform'));

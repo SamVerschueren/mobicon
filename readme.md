@@ -45,7 +45,8 @@ The platform to generate the icons for.
 
 ##### dest
 
-Type: `string`
+Type: `string`  
+Default: `process.cwd()`
 
 The directory to save the generated icons.
 
