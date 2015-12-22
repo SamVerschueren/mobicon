@@ -24,6 +24,10 @@
       {
         "file": "drawable-xxhdpi/icon.png",
         "dimension": 144
+      },
+      {
+        "file": "drawable-xxxhdpi/icon.png",
+        "dimension": 192
       }
     ]
   },
@@ -36,6 +40,10 @@
       {
         "file": "icon-40@2x.png",
         "dimension": 80
+      },
+      {
+        "file": "icon-40@3x.png",
+        "dimension": 120
       },
       {
         "file": "icon-50.png",
@@ -80,6 +88,10 @@
       {
         "file": "icon-small@2x.png",
         "dimension": 58
+      },
+      {
+        "file": "icon-small@3x.png",
+        "dimension": 87
       },
       {
         "file": "icon.png",

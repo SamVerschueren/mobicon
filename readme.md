@@ -63,6 +63,7 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 - `drawable-hdpi/icon.png`
 - `drawable-xhdpi/icon.png`
 - `drawable-xxhdpi/icon.png`
+- `drawable-xxxhdpi/icon.png`
 
 ### iOS
 
@@ -70,8 +71,10 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 - `icon@2x.png`
 - `icon-small.png`
 - `icon-small@2x.png`
+- `icon-small@3x.png`
 - `icon-40.png`
 - `icon-40@2x.png`
+- `icon-40@3x.png`
 - `icon-50.png`
 - `icon-50@2x.png`
 - `icon-60.png`
