@@ -16,6 +16,7 @@ test('android', async t => {
 	t.true(pathExists.sync('android/drawable-hdpi/icon.png'));
 	t.true(pathExists.sync('android/drawable-xhdpi/icon.png'));
 	t.true(pathExists.sync('android/drawable-xxhdpi/icon.png'));
+	t.true(pathExists.sync('android/drawable-xxxhdpi/icon.png'));
 });
 
 test('ios', async t => {
@@ -27,6 +28,8 @@ test('ios', async t => {
 test('bb10', async t => {
 	await fn('./fixtures/icon.png', {platform: 'blackberry10', dest: 'bb10'});
 
-	t.true(pathExists.sync('bb10/icon-86.png'));
-	t.true(pathExists.sync('bb10/icon-150.png'));
+	t.true(pathExists.sync('bb10/icon-90.png'));
+	t.true(pathExists.sync('bb10/icon-96.png'));
+	t.true(pathExists.sync('bb10/icon-110.png'));
+	t.true(pathExists.sync('bb10/icon-144.png'));
 });
