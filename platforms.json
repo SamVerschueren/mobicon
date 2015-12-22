@@ -1,6 +1,5 @@
 {
   "android": {
-    "dest": "res",
     "icons": [
       {
         "file": "drawable/icon.png",
@@ -29,7 +28,6 @@
     ]
   },
   "ios": {
-    "dest": "icons",
     "icons": [
       {
         "file": "icon-40.png",
@@ -94,7 +92,6 @@
     ]
   },
   "blackberry10": {
-    "dest": "",
     "icons": [
       {
         "file": "icon-86.png",

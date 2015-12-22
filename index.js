@@ -24,7 +24,7 @@ module.exports = function (file, opts) {
 	var fn = path.extname(file) === '.svg' ? 'density' : 'resize';
 
 	return Promise.all(platform.icons.map(function (icon) {
-		var dest = path.join(opts.dest, platform.dest, icon.file);
+		var dest = path.join(opts.dest, icon.file);
 		var image = gm(file)[fn](icon.dimension, icon.dimension);
 
 		mkdirp.sync(path.dirname(dest));

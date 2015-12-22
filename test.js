@@ -10,18 +10,18 @@ test.after(async () => {
 test('android', async t => {
 	await fn('./fixtures/icon.png', {platform: 'android', dest: 'android'});
 
-	t.true(pathExists.sync('android/res/drawable/icon.png'));
-	t.true(pathExists.sync('android/res/drawable-ldpi/icon.png'));
-	t.true(pathExists.sync('android/res/drawable-mdpi/icon.png'));
-	t.true(pathExists.sync('android/res/drawable-hdpi/icon.png'));
-	t.true(pathExists.sync('android/res/drawable-xhdpi/icon.png'));
-	t.true(pathExists.sync('android/res/drawable-xxhdpi/icon.png'));
+	t.true(pathExists.sync('android/drawable/icon.png'));
+	t.true(pathExists.sync('android/drawable-ldpi/icon.png'));
+	t.true(pathExists.sync('android/drawable-mdpi/icon.png'));
+	t.true(pathExists.sync('android/drawable-hdpi/icon.png'));
+	t.true(pathExists.sync('android/drawable-xhdpi/icon.png'));
+	t.true(pathExists.sync('android/drawable-xxhdpi/icon.png'));
 });
 
 test('ios', async t => {
 	await fn('./fixtures/icon.png', {platform: 'ios', dest: 'ios'});
 
-	t.true(pathExists.sync('ios/icons/icon.png'));
+	t.true(pathExists.sync('ios/icon.png'));
 });
 
 test('bb10', async t => {
