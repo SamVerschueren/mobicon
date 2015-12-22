@@ -1,0 +1,45 @@
+{
+  "name": "mobicon",
+  "version": "0.0.0",
+  "description": "Mobile icon generator",
+  "license": "MIT",
+  "repository": "SamVerschueren/mobicon",
+  "author": {
+    "name": "Sam Verschueren",
+    "email": "sam.verschueren@gmail.com",
+    "url": "github.com/SamVerschueren"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js",
+    "platforms.json"
+  ],
+  "keywords": [
+    "mobile",
+    "icon",
+    "generator",
+    "mobicon",
+    "cordova",
+    "android",
+    "ios",
+    "blackberry10"
+  ],
+  "dependencies": {
+    "gm": "^1.21.1",
+    "mkdirp": "^0.5.1",
+    "object-assign": "^4.0.1",
+    "path-exists": "^2.1.0",
+    "pify": "^2.3.0",
+    "pinkie-promise": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "del": "^2.2.0",
+    "xo": "*"
+  }
+}

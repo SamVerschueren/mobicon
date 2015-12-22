@@ -1,0 +1,109 @@
+{
+  "android": {
+    "dest": "res",
+    "icons": [
+      {
+        "file": "drawable/icon.png",
+        "dimension": 96
+      },
+      {
+        "file": "drawable-ldpi/icon.png",
+        "dimension": 36
+      },
+      {
+        "file": "drawable-mdpi/icon.png",
+        "dimension": 48
+      },
+      {
+        "file": "drawable-hdpi/icon.png",
+        "dimension": 72
+      },
+      {
+        "file": "drawable-xhdpi/icon.png",
+        "dimension": 96
+      },
+      {
+        "file": "drawable-xxhdpi/icon.png",
+        "dimension": 144
+      }
+    ]
+  },
+  "ios": {
+    "dest": "icons",
+    "icons": [
+      {
+        "file": "icon-40.png",
+        "dimension": 40
+      },
+      {
+        "file": "icon-40@2x.png",
+        "dimension": 80
+      },
+      {
+        "file": "icon-50.png",
+        "dimension": 50
+      },
+      {
+        "file": "icon-50@2x.png",
+        "dimension": 100
+      },
+      {
+        "file": "icon-60.png",
+        "dimension": 60
+      },
+      {
+        "file": "icon-60@2x.png",
+        "dimension": 120
+      },
+      {
+        "file": "icon-60@3x.png",
+        "dimension": 180
+      },
+      {
+        "file": "icon-72.png",
+        "dimension": 72
+      },
+      {
+        "file": "icon-72@2x.png",
+        "dimension": 144
+      },
+      {
+        "file": "icon-76.png",
+        "dimension": 76
+      },
+      {
+        "file": "icon-76@2x.png",
+        "dimension": 152
+      },
+      {
+        "file": "icon-small.png",
+        "dimension": 29
+      },
+      {
+        "file": "icon-small@2x.png",
+        "dimension": 58
+      },
+      {
+        "file": "icon.png",
+        "dimension": 57
+      },
+      {
+        "file": "icon@2x.png",
+        "dimension": 114
+      }
+    ]
+  },
+  "blackberry10": {
+    "dest": "",
+    "icons": [
+      {
+        "file": "icon-86.png",
+        "dimension": 86
+      },
+      {
+        "file": "icon-150.png",
+        "dimension": 150
+      }
+    ]
+  }
+}
