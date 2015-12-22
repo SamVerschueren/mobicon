@@ -51,6 +51,45 @@ Default: `process.cwd()`
 The directory to save the generated icons.
 
 
+## Platforms
+
+The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform generates a different set of icons.
+
+### Android
+
+- `drawable/icon.png`
+- `drawable-ldpi/icon.png`
+- `drawable-mdpi/icon.png`
+- `drawable-hdpi/icon.png`
+- `drawable-xhdpi/icon.png`
+- `drawable-xxhdpi/icon.png`
+
+### iOS
+
+- `icon.png`
+- `icon@2x.png`
+- `icon-small.png`
+- `icon-small@2x.png`
+- `icon-40.png`
+- `icon-40@2x.png`
+- `icon-50.png`
+- `icon-50@2x.png`
+- `icon-60.png`
+- `icon-60@2x.png`
+- `icon-60@3x.png`
+- `icon-72.png`
+- `icon-72@2x.png`
+- `icon-76.png`
+- `icon-76@2x.png`
+
+### BlackBerry 10
+
+- `icon-90.png`
+- `icon-96.png`
+- `icon-110.png`
+- `icon-144.png`
+
+
 ## Related
 
 - [mobicon-cli](https://github.com/SamVerschueren/mobicon-cli) - The CLI for this module
