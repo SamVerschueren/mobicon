@@ -1,7 +1,7 @@
 {
   "name": "mobicon",
   "version": "0.1.1",
-  "description": "Mobile icon generator",
+  "description": "Mobile application icon generator",
   "license": "MIT",
   "repository": "SamVerschueren/mobicon",
   "author": {
