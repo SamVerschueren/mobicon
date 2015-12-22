@@ -94,13 +94,21 @@
   "blackberry10": {
     "icons": [
       {
-        "file": "icon-86.png",
-        "dimension": 86
+        "file": "icon-90.png",
+        "dimension": 90
       },
       {
-        "file": "icon-150.png",
-        "dimension": 150
+        "file": "icon-96.png",
+        "dimension": 96
+      },
+      {
+        "file": "icon-110.png",
+        "dimension": 110
+      },
+      {
+        "file": "icon-144.png",
+        "dimension": 144
       }
     ]
-  }
+  }  
 }
