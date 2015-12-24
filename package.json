@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "ava": "*",
-    "del": "^2.2.0",
+    "tempfile": "^1.1.1",
     "xo": "*"
   }
 }
