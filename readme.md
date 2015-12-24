@@ -9,7 +9,29 @@
 $ npm install --save mobicon
 ```
 
-> Note: This library depends on [GraphicsMagick](http://www.graphicsmagick.org/) or [ImageMagick](http://www.imagemagick.org/), so be sure to install one of those.
+### GraphicsMagick
+
+This library depends on [GraphicsMagick](http://www.graphicsmagick.org/), so be sure to install this library as well.
+
+#### Mac OSX
+
+```
+$ brew install graphicsmagick
+```
+
+#### Linux
+
+```
+$ sudo apt-get install graphicsmagick
+```
+
+#### Windows
+
+[Manual](http://www.graphicsmagick.org/INSTALL-windows.html) installation or via [chocolatey](https://chocolatey.org/).
+
+```
+$ choco install graphicsmagick
+```
 
 
 ## Usage
