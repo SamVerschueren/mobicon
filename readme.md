@@ -42,6 +42,10 @@ const mobicon = require('mobicon');
 mobicon('icon.png', {platform: 'android'}).then(() => {
     // icons generated
 });
+
+mobicon('icon.svg', {platform: 'ios', background: '#ff0000', contentRatio: 1}).then(() => {
+    // icons generated
+});
 ```
 
 
@@ -53,7 +57,7 @@ mobicon('icon.png', {platform: 'android'}).then(() => {
 
 Type: `string`
 
-The source file of the icon.
+Source file of the icon.
 
 #### options
 
@@ -63,14 +67,28 @@ The source file of the icon.
 Type: `string`  
 Values: `android` `ios` `blackberry10`
 
-The platform to generate the icons for.
+Platform to generate the icons for.
+
+##### background
+
+Type: `string`  
+Default: `white`
+
+[Color](http://www.graphicsmagick.org/GraphicsMagick.html#details-fill) of the icon background if the icon is transparant.
+
+##### contentRatio
+
+Type: `number`  
+Default: `1`
+
+Logo-icon ratio. `1` means the logo will fill up the entire width (or height) of the icon, `0.5` means it will only fill up half of the icon.
 
 ##### dest
 
 Type: `string`  
 Default: `process.cwd()`
 
-The directory to save the generated icons.
+Directory to save the generated icons.
 
 
 ## Platforms
@@ -118,7 +136,7 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 ## Related
 
 - [mobicon-cli](https://github.com/SamVerschueren/mobicon-cli) - The CLI for this module
-
+- [mobisplash](https://github.com/SamVerschueren/mobisplash) - Mobile app splash screen generator
 
 ## License
 

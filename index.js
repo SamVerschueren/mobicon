@@ -5,8 +5,31 @@ var Promise = require('pinkie-promise');
 var pify = require('pify');
 var objectAssign = require('object-assign');
 var gm = require('gm');
-var mkdirp = require('mkdirp');
+var mkdir = require('mkdirp');
 var platforms = require('./platforms.json');
+var mkdirp = pify(mkdir, Promise);
+
+function calculateDimension(imgSize, iconSize, opts, resizeFn) {
+	var width;
+	var height;
+
+	if (imgSize.width > imgSize.height) {
+		width = iconSize * opts.contentRatio;
+		height = imgSize.height / imgSize.width * width;
+	} else {
+		height = iconSize * opts.contentRatio;
+		width = imgSize.width / imgSize.height * height;
+	}
+
+	if (resizeFn === 'density') {
+		// calculate the dpi (= 72 * targetSize / srcSize)
+		width = 72 * width / imgSize.width;
+		height = 72 * height / imgSize.height;
+	}
+
+	return {width: width, height: height};
+}
+
 module.exports = function (file, opts) {
 	if (typeof file !== 'string' || !pathExists.sync(file)) {
 		return Promise.reject(new TypeError('Expected a file.'));
@@ -14,7 +37,9 @@ module.exports = function (file, opts) {
 
 	opts = objectAssign({
 		platform: '',
-		dest: process.cwd()
+		dest: process.cwd(),
+		background: 'white',
+		contentRatio: 1
 	}, opts);
 
 	if (opts.platform === '') {
@@ -24,16 +49,27 @@ module.exports = function (file, opts) {
 	}
 
 	var platform = platforms[opts.platform.toLowerCase()];
-	var fn = path.extname(file) === '.svg' ? 'density' : 'resize';
+	var resizeFn = path.extname(file) === '.svg' ? 'density' : 'resize';
 
-	return Promise.all(platform.icons.map(function (icon) {
-		var dimension = fn === 'density' ? icon.dimension * 0.72 : dimension;
+	var img = gm(file);
 
-		var dest = path.join(opts.dest, icon.file);
-		var image = gm(file)[fn](dimension, dimension);
+	return pify(img.identify.bind(img), Promise)()
+		.then(function (identity) {
+			var size = identity.size;
 
-		mkdirp.sync(path.dirname(dest));
+			return Promise.all(platform.icons.map(function (icon) {
+				var dest = path.join(opts.dest, icon.file);
+				var dimension = calculateDimension(size, icon.dimension, opts, resizeFn);
 
-		return pify(image.write.bind(image), Promise)(dest);
-	}));
+				var image = gm(file)[resizeFn](dimension.width, dimension.height)
+					.gravity('Center')
+					.background(opts.background)
+					.extent(icon.dimension, icon.dimension);
+
+				return mkdirp(path.dirname(dest))
+					.then(function () {
+						return pify(image.write.bind(image), Promise)(dest);
+					});
+			}));
+		});
 };
