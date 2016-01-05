@@ -12,7 +12,10 @@ module.exports = function (file, opts) {
 		return Promise.reject(new TypeError('Expected a file.'));
 	}
 
-	opts = objectAssign({platform: '', dest: process.cwd()}, opts);
+	opts = objectAssign({
+		platform: '',
+		dest: process.cwd()
+	}, opts);
 
 	if (opts.platform === '') {
 		return Promise.reject(new Error('Please provide a platform'));
@@ -24,8 +27,10 @@ module.exports = function (file, opts) {
 	var fn = path.extname(file) === '.svg' ? 'density' : 'resize';
 
 	return Promise.all(platform.icons.map(function (icon) {
+		var dimension = fn === 'density' ? icon.dimension * 0.72 : dimension;
+
 		var dest = path.join(opts.dest, icon.file);
-		var image = gm(file)[fn](icon.dimension, icon.dimension);
+		var image = gm(file)[fn](dimension, dimension);
 
 		mkdirp.sync(path.dirname(dest));
 
