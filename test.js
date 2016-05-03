@@ -1,12 +1,10 @@
-import test from 'ava';
 import path from 'path';
+import test from 'ava';
 import pathExists from 'path-exists';
 import tempfile from 'tempfile';
 import gm from 'gm';
 import pify from 'pify';
 import fn from './';
-
-global.Promise = Promise;
 
 test.beforeEach(t => {
 	t.context.tmp = tempfile();
