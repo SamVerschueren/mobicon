@@ -63,29 +63,29 @@ Source file of the icon.
 
 ##### platform
 
-*Required*  
-Type: `string`  
+*Required*<br>
+Type: `string`<br>
 Values: `android` `ios` `blackberry10`
 
 Platform to generate the icons for.
 
 ##### background
 
-Type: `string`  
+Type: `string`<br>
 Default: `white`
 
 [Color](http://www.graphicsmagick.org/GraphicsMagick.html#details-fill) of the icon background if the icon is transparant.
 
 ##### contentRatio
 
-Type: `number`  
+Type: `number`<br>
 Default: `1`
 
 Logo-icon ratio. `1` means the logo will fill up the entire width (or height) of the icon, `0.5` means it will only fill up half of the icon.
 
 ##### dest
 
-Type: `string`  
+Type: `string`<br>
 Default: `process.cwd()`
 
 Directory to save the generated icons.
