@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "clinton && xo && ava"
   },
   "files": [
     "index.js",
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "ava": "*",
+    "clinton": "*",
     "tempfile": "^1.1.1",
     "xo": "*"
   },
