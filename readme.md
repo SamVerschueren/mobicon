@@ -124,6 +124,7 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 - `icon-72@2x.png`
 - `icon-76.png`
 - `icon-76@2x.png`
+- `icon-83.5@2x.png`
 
 ### BlackBerry 10
 

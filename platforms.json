@@ -82,6 +82,10 @@
         "dimension": 152
       },
       {
+        "file": "icon-83.5@2x.png",
+        "dimension": 167
+      },
+      {
         "file": "icon-small.png",
         "dimension": 29
       },
@@ -122,5 +126,5 @@
         "dimension": 144
       }
     ]
-  }  
+  }
 }
