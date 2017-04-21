@@ -5,6 +5,7 @@ const pify = require('pify');
 const gm = require('gm');
 const mkdir = require('mkdirp');
 const platforms = require('./platforms.json');
+
 const mkdirp = pify(mkdir);
 
 const calculateDimension = (imgSize, iconSize, opts, resizeFn) => {
@@ -20,7 +21,7 @@ const calculateDimension = (imgSize, iconSize, opts, resizeFn) => {
 	}
 
 	if (resizeFn === 'density') {
-		// calculate the dpi (= 72 * targetSize / srcSize)
+		// Calculate the dpi (= 72 * targetSize / srcSize)
 		width = 72 * width / imgSize.width;
 		height = 72 * height / imgSize.height;
 	}
