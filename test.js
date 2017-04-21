@@ -13,13 +13,12 @@ test.beforeEach(t => {
 test('android', async t => {
 	await fn('fixtures/icon.png', {platform: 'android', dest: t.context.tmp});
 
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-ldpi/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-mdpi/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-hdpi/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-xhdpi/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-xxhdpi/icon.png')));
-	t.true(pathExists.sync(path.join(t.context.tmp, 'drawable-xxxhdpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-ldpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-mdpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-hdpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-xhdpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-xxhdpi/icon.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'mipmap-xxxhdpi/icon.png')));
 });
 
 test('ios', async t => {

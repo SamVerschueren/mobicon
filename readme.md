@@ -97,13 +97,12 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 
 ### Android
 
-- `drawable/icon.png`
-- `drawable-ldpi/icon.png`
-- `drawable-mdpi/icon.png`
-- `drawable-hdpi/icon.png`
-- `drawable-xhdpi/icon.png`
-- `drawable-xxhdpi/icon.png`
-- `drawable-xxxhdpi/icon.png`
+- `mipmap-ldpi/icon.png`
+- `mipmap-mdpi/icon.png`
+- `mipmap-hdpi/icon.png`
+- `mipmap-xhdpi/icon.png`
+- `mipmap-xxhdpi/icon.png`
+- `mipmap-xxxhdpi/icon.png`
 
 ### iOS
 
@@ -138,6 +137,7 @@ The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform
 
 - [mobicon-cli](https://github.com/SamVerschueren/mobicon-cli) - The CLI for this module
 - [mobisplash](https://github.com/SamVerschueren/mobisplash) - Mobile app splash screen generator
+
 
 ## License
 

@@ -16,8 +16,7 @@
     "test": "clinton && xo && ava"
   },
   "files": [
-    "index.js",
-    "platforms.json"
+    "index.js"
   ],
   "keywords": [
     "mobile",
@@ -32,7 +31,10 @@
     "blackberry10"
   ],
   "dependencies": {
+    "android-icon-list": "^1.0.1",
+    "bb10-icon-list": "^1.0.0",
     "gm": "^1.21.1",
+    "ios-icon-list": "^1.0.0",
     "mkdirp": "^0.5.1",
     "path-exists": "^3.0.0",
     "pify": "^2.3.0"

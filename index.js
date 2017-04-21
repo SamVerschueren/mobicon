@@ -4,9 +4,17 @@ const pathExists = require('path-exists');
 const pify = require('pify');
 const gm = require('gm');
 const mkdir = require('mkdirp');
-const platforms = require('./platforms.json');
+const androidIcons = require('android-icon-list');
+const bb10Icons = require('bb10-icon-list');
+const iosIcons = require('ios-icon-list');
 
 const mkdirp = pify(mkdir);
+
+const platformIcons = {
+	android: androidIcons(),
+	ios: iosIcons(),
+	blackberry10: bb10Icons()
+};
 
 const calculateDimension = (imgSize, iconSize, opts, resizeFn) => {
 	let width;
@@ -43,11 +51,11 @@ module.exports = (file, opts) => {
 
 	if (opts.platform === '') {
 		return Promise.reject(new Error('Please provide a platform'));
-	} else if (Object.keys(platforms).indexOf(opts.platform.toLowerCase()) === -1) {
+	} else if (Object.keys(platformIcons).indexOf(opts.platform.toLowerCase()) === -1) {
 		return Promise.reject(new Error(`Platform ${opts.platform} is not supported.`));
 	}
 
-	const platform = platforms[opts.platform.toLowerCase()];
+	const icons = platformIcons[opts.platform.toLowerCase()];
 	const resizeFn = path.extname(file) === '.svg' ? 'density' : 'resize';
 
 	const img = gm(file);
@@ -56,7 +64,7 @@ module.exports = (file, opts) => {
 		.then(identity => {
 			const size = identity.size;
 
-			return Promise.all(platform.icons.map(icon => {
+			return Promise.all(icons.map(icon => {
 				const dest = path.join(opts.dest, icon.file);
 				const dimension = calculateDimension(size, icon.dimension, opts, resizeFn);
 
