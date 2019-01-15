@@ -65,7 +65,7 @@ Source file of the icon.
 
 *Required*<br>
 Type: `string`<br>
-Values: `android` `ios` `blackberry10`
+Values: `pwa` `android` `ios` `blackberry10`
 
 Platform to generate the icons for.
 
@@ -93,7 +93,18 @@ Directory to save the generated icons.
 
 ## Platforms
 
-The supported platforms are `Android`, `iOS` and `BlackBerry 10`. Every platform generates a different set of icons.
+The supported platforms are `PWA`, `Android`, `iOS` and `BlackBerry 10`. Every platform generates a different set of icons.
+
+### PWA
+
+- `icon-72x72.png`
+- `icon-96x96.png`
+- `icon-128x128.png`
+- `icon-144x144.png`
+- `icon-152x152.png`
+- `icon-192x192.png`
+- `icon-384x384.png`
+- `icon-512x512.png`
 
 ### Android
 

@@ -10,6 +10,19 @@ test.beforeEach(t => {
 	t.context.tmp = tempfile();
 });
 
+test('pwa', async t => {
+	await fn('fixtures/icon.png', {platform: 'pwa', dest: t.context.tmp});
+
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-72x72.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-96x96.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-128x128.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-144x144.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-152x152.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-192x192.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-384x384.png')));
+	t.true(pathExists.sync(path.join(t.context.tmp, 'icon-512x512.png')));
+});
+
 test('android', async t => {
 	await fn('fixtures/icon.png', {platform: 'android', dest: t.context.tmp});
 
