@@ -51,7 +51,9 @@ module.exports = (file, opts) => {
 
 	if (opts.platform === '') {
 		return Promise.reject(new Error('Please provide a platform'));
-	} else if (Object.keys(platformIcons).indexOf(opts.platform.toLowerCase()) === -1) {
+	}
+
+	if (Object.keys(platformIcons).indexOf(opts.platform.toLowerCase()) === -1) {
 		return Promise.reject(new Error(`Platform ${opts.platform} is not supported.`));
 	}
 
@@ -62,7 +64,7 @@ module.exports = (file, opts) => {
 
 	return pify(img.identify.bind(img))()
 		.then(identity => {
-			const size = identity.size;
+			const {size} = identity;
 
 			return Promise.all(icons.map(icon => {
 				const dest = path.join(opts.dest, icon.file);

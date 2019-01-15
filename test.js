@@ -4,7 +4,7 @@ import pathExists from 'path-exists';
 import tempfile from 'tempfile';
 import gm from 'gm';
 import pify from 'pify';
-import fn from './';
+import fn from '.';
 
 test.beforeEach(t => {
 	t.context.tmp = tempfile();
