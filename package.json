@@ -1,48 +1,48 @@
 {
-  "name": "mobicon",
-  "version": "2.1.0",
-  "description": "Mobile app icon generator",
-  "license": "MIT",
-  "repository": "SamVerschueren/mobicon",
-  "author": {
-    "name": "Sam Verschueren",
-    "email": "sam.verschueren@gmail.com",
-    "url": "github.com/SamVerschueren"
-  },
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "clinton && xo && ava"
-  },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "mobile",
-    "app",
-    "application",
-    "icon",
-    "generator",
-    "mobicon",
-    "cordova",
-    "android",
-    "ios",
-    "blackberry10"
-  ],
-  "dependencies": {
-    "android-icon-list": "^1.0.1",
-    "bb10-icon-list": "^1.0.0",
-    "gm": "^1.21.1",
-    "ios-icon-list": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "path-exists": "^3.0.0",
-    "pify": "^2.3.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "clinton": "*",
-    "tempfile": "^1.1.1",
-    "xo": "*"
-  }
+	"name": "mobicon",
+	"version": "2.1.0",
+	"description": "Mobile app icon generator",
+	"license": "MIT",
+	"repository": "SamVerschueren/mobicon",
+	"author": {
+		"name": "Sam Verschueren",
+		"email": "sam.verschueren@gmail.com",
+		"url": "github.com/SamVerschueren"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "clinton && xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"mobile",
+		"app",
+		"application",
+		"icon",
+		"generator",
+		"mobicon",
+		"cordova",
+		"android",
+		"ios",
+		"blackberry10"
+	],
+	"dependencies": {
+		"android-icon-list": "^1.0.1",
+		"bb10-icon-list": "^1.0.0",
+		"gm": "^1.21.1",
+		"ios-icon-list": "^1.0.0",
+		"mkdirp": "^0.5.1",
+		"path-exists": "^3.0.0",
+		"pify": "^2.3.0"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"clinton": "*",
+		"tempfile": "^1.1.1",
+		"xo": "*"
+	}
 }
