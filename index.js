@@ -8,6 +8,8 @@ const pwaIcons = require('pwa-icon-list');
 const androidIcons = require('android-icon-list');
 const bb10Icons = require('bb10-icon-list');
 const iosIcons = require('ios-icon-list');
+const execa = require('execa');
+const mask = require('./lib/mask');
 
 const mkdirp = pify(mkdir);
 
@@ -17,6 +19,12 @@ const platformIcons = {
 	ios: iosIcons(),
 	blackberry10: bb10Icons()
 };
+
+// See https://material.io/design/platform-guidance/android-icons.html#keyline-shapes
+const platformRadius = new Map([
+	['android', 0.0909],
+	['pwa', 0.0909]
+]);
 
 const calculateDimension = (imgSize, iconSize, opts, resizeFn) => {
 	let width;
@@ -48,6 +56,8 @@ module.exports = (file, opts) => {
 		platform: '',
 		dest: process.cwd(),
 		background: 'white',
+		roundedCorners: platformRadius.has(opts.platform),
+		borderRadius: platformRadius.get(opts.platform),
 		contentRatio: 1
 	}, opts);
 
@@ -77,7 +87,17 @@ module.exports = (file, opts) => {
 					.background(opts.background)
 					.extent(icon.dimension, icon.dimension);
 
-				return mkdirp(path.dirname(dest)).then(() => pify(image.write.bind(image))(dest));
+				return mkdirp(path.dirname(dest))
+					.then(() => pify(image.write.bind(image))(dest))
+					.then(() => {
+						if (opts.roundedCorners) {
+							return mask(icon.dimension, opts.borderRadius)
+								.then(maskLocation => {
+									// Apply the mask and overwrite the original image
+									return execa('gm', ['composite', '-compose', 'in', dest, maskLocation, dest]);
+								});
+						}
+					});
 			}));
 		});
 };

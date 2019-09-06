@@ -1,9 +1,11 @@
 import path from 'path';
+import fs from 'fs';
 import test from 'ava';
 import pathExists from 'path-exists';
 import tempfile from 'tempfile';
 import gm from 'gm';
 import pify from 'pify';
+import parsePNG from 'parse-png';
 import fn from '.';
 
 test.beforeEach(t => {
@@ -67,4 +69,16 @@ test('output size svg', async t => {
 
 	t.is(width, 40);
 	t.is(height, 40);
+});
+
+test('transparent corners', async t => {
+	await fn('fixtures/icon.svg', {platform: 'pwa', dest: t.context.tmp, roundedCorners: true});
+
+	const {data} = await parsePNG(fs.readFileSync(path.join(t.context.tmp, 'icon-72x72.png')));
+
+	// Check the first pixel
+	t.is(data[0], 0); // R
+	t.is(data[1], 0); // G
+	t.is(data[2], 0); // B
+	t.is(data[3], 0); // A
 });

@@ -83,6 +83,20 @@ Default: `1`
 
 Logo-icon ratio. `1` means the logo will fill up the entire width (or height) of the icon, `0.5` means it will only fill up half of the icon.
 
+##### roundedCorners
+
+Type: `boolean`<br>
+Default: `true` (only for `Android` and `PWA`)
+
+Boolean indicating if the generated icons should have rounded corners. This is `true` by default for the `Android` and `PWA` platform, `false` otherwise.
+
+##### borderRadius
+
+Type: `number`<br>
+Default: `0.0909`
+
+The corner radius percentage of the generated icon. The default value is `9.09%`. See the [material design styleguide](https://material.io/design/platform-guidance/android-icons.html#keyline-shapes) for more information.
+
 ##### dest
 
 Type: `string`<br>

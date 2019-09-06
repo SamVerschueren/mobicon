@@ -16,7 +16,8 @@
 		"test": "clinton && xo && ava"
 	},
 	"files": [
-		"index.js"
+		"index.js",
+		"lib"
 	],
 	"keywords": [
 		"mobile",
@@ -33,16 +34,19 @@
 	"dependencies": {
 		"android-icon-list": "^1.0.1",
 		"bb10-icon-list": "^1.0.0",
+		"execa": "^1.0.0",
 		"gm": "^1.21.1",
 		"ios-icon-list": "^1.0.0",
 		"mkdirp": "^0.5.1",
 		"path-exists": "^3.0.0",
 		"pify": "^2.3.0",
-		"pwa-icon-list": "^1.0.0"
+		"pwa-icon-list": "^1.0.0",
+		"tempy": "^0.3.0"
 	},
 	"devDependencies": {
 		"ava": "*",
 		"clinton": "*",
+		"parse-png": "^1.1.2",
 		"tempfile": "^1.1.1",
 		"xo": "*"
 	}
