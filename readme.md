@@ -136,6 +136,7 @@ The supported platforms are `PWA`, `Android`, `iOS` and `BlackBerry 10`. Every p
 - `icon-small.png`
 - `icon-small@2x.png`
 - `icon-small@3x.png`
+- `icon-20.png`
 - `icon-40.png`
 - `icon-40@2x.png`
 - `icon-40@3x.png`
